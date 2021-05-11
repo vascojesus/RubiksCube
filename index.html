@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubik</title>
+    <script src="three.js"></script>
+    <script src="OrbitControls.js"></script>
+
+
+
+    <style>
+        html,
+        body {
+            padding: 10;
+            margin: 10;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        #title {
+            position: absolute;
+            top: 1%;
+            left: 20vw;
+            width: 60vw;
+            text-align: center;
+            font-size: 5vh;
+        }
+
+        #timer {
+            position: absolute;
+            top: 1%;
+            font-size: 4vh;
+        }
+
+        .buttons1 {
+            margin-top: 5%;
+            margin-left: 1%;
+            position: absolute;
+            top: 50px;
+            height: 50px;
+        }
+
+        .buttons2 {
+            margin-top: 5%;
+            margin-left: 36%;
+            position: absolute;
+            top: 50px;
+            height: 50px;
+        }
+
+        .buttons3 {
+            margin-top: 5%;
+            margin-left: 73%;
+            position: absolute;
+            top: 50px;
+            height: 50px;
+        }
+
+        button {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="timer"></div>
+    <div id="title"><b>Rubik's Cube</b> </div>
+    <div class="buttons1">
+        <!-- <input type="image" onclick="rubiksCube.shuffle()">SHUFFLE</button> -->
+        <!-- Rotations on button click -->
+        <input type="image" onclick="rubiksCube.move(-1,'x', 1)" src="Imagens\Left Face Down.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(-1,'x', -1)" src="Imagens\Left Face Up.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(0,'x', 1)" src="Imagens\Middle Face Down.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(0,'x', -1)" src="Imagens\Middle Face Up.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(1,'x', 1)" src="Imagens\Right Face Down.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(1,'x', -1)" src="Imagens\Right Face Up.png" height="75px">
+    </div>
+    <div class="buttons2">
+        <input type="image" onclick="rubiksCube.move(1,'z', 1)" src="Imagens\Front Left.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(1,'z', -1)" src="Imagens\Front Right.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(0,'z', 1)" src="Imagens\Middle Left.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(0,'z', -1)" src="Imagens\Middle Right.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(-1,'z', 1)" src="Imagens\Back Left.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(-1,'z', -1)" src="Imagens\Back Right.png" height="75px">
+    </div>
+    <div class="buttons3">
+        <input type="image" onclick="rubiksCube.move(1,'y', -1)" src="Imagens\Top Left.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(1,'y', 1)" src="Imagens\Top Right.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(0,'y', -1)" src="Imagens\Center Left.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(0,'y', 1)" src="Imagens\Center Right.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(-1,'y', -1)" src="Imagens\Center Left.png" height="75px">
+        <input type="image" onclick="rubiksCube.move(-1,'y', 1)" src="Imagens\Center Right.png" height="75px">
+    </div>
+    <script src="rubiksCube.js"></script>
+</body>
+
+</html>
